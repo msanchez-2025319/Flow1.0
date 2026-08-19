@@ -1,0 +1,58 @@
+<div class="auth-shell">
+
+  <div class="auth-panel">
+
+    <div class="auth-logo">
+      <img
+              src="frontend/public/images/flowLogo-removebg-preview.jpg"
+      alt="Flow"
+      />
+    </div>
+
+    <h2 class="auth-panel__title">
+      Sesión expirada
+    </h2>
+
+    <p class="auth-panel__subtitle">
+      Por seguridad, tu sesión terminó al alcanzar el tiempo máximo permitido.
+    </p>
+
+    <button
+      type="button"
+      class="auth-button"
+      (click)="goToLogin()"
+    >
+      Iniciar sesión nuevamente
+    </button>
+
+  </div>
+
+
+  <div
+    class="auth-visual"
+    aria-hidden="true"
+  >
+
+    <div
+      class="auth-visual__glow auth-visual__glow--one"
+    ></div>
+
+    <div
+      class="auth-visual__glow auth-visual__glow--two"
+    ></div>
+
+    <div class="auth-visual__grid"></div>
+
+    <div class="auth-visual__content">
+
+      <h1 class="auth-visual__slogan">
+        TU SEGURIDAD,
+        <br />
+        SIEMPRE PRIMERO
+      </h1>
+
+    </div>
+
+  </div>
+
+</div>

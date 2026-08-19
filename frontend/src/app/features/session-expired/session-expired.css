@@ -1,0 +1,602 @@
+.auth-shell {
+  --primary: #5fbcb9;
+  --secondary: #2b8e9e;
+  --accent: #7abaa4;
+  --dark: #0a212a;
+  --dark-secondary: #112e32;
+  --dark-blue: #12454f;
+  --blue: #247c8a;
+  --beige: #998976;
+  --white: #ffffff;
+
+  --transition: 0.25s ease;
+
+  min-height: 100vh;
+
+  display: grid;
+
+  grid-template-columns: 420px 1fr;
+
+  background: var(--dark);
+}
+
+
+/* =========================================
+   PANEL IZQUIERDO
+========================================= */
+
+.auth-panel {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 3rem;
+
+  color: var(--white);
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--dark) 0%,
+      var(--dark-secondary) 55%,
+      var(--dark-blue) 100%
+    );
+
+  border-right: 1px solid rgba(95, 188, 185, 0.12);
+
+  box-shadow:
+    10px 0 40px rgba(10, 33, 42, 0.25);
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.auth-logo {
+  width: 72px;
+
+  height: 72px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 2rem;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--primary),
+      var(--secondary)
+    );
+
+  border: 2px solid rgba(122, 186, 164, 0.45);
+
+  box-shadow:
+    0 10px 25px rgba(10, 33, 42, 0.45),
+    0 0 25px rgba(95, 188, 185, 0.12);
+
+  overflow: hidden;
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+
+.auth-logo:hover {
+  transform: scale(1.04);
+
+  box-shadow:
+    0 14px 30px rgba(10, 33, 42, 0.55),
+    0 0 30px rgba(95, 188, 185, 0.18);
+}
+
+
+.auth-logo img {
+  width: 52px;
+
+  height: 52px;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.auth-panel__title {
+  margin: 0 0 0.7rem;
+
+  color: var(--white);
+
+  font-family: 'Poppins', sans-serif;
+
+  font-size: 1.7rem;
+
+  font-weight: 600;
+
+  line-height: 1.25;
+
+  letter-spacing: 0.01em;
+}
+
+
+/* =========================================
+   DESCRIPCIÓN
+========================================= */
+
+.auth-panel__subtitle {
+  max-width: 320px;
+
+  margin: 0 0 2rem;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-family: 'Inter', sans-serif;
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   BOTÓN
+========================================= */
+
+.auth-button {
+  width: 100%;
+
+  padding: 0.9rem 1.2rem;
+
+  border: none;
+
+  border-radius: 12px;
+
+  color: var(--white);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary) 0%,
+      var(--secondary) 55%,
+      var(--blue) 100%
+    );
+
+  font-family: 'Inter', sans-serif;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(43, 142, 158, 0.28);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    filter var(--transition);
+}
+
+
+.auth-button:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(1.07);
+
+  box-shadow:
+    0 14px 30px rgba(36, 124, 138, 0.4);
+}
+
+
+.auth-button:active {
+  transform: translateY(0);
+
+  box-shadow:
+    0 8px 18px rgba(36, 124, 138, 0.3);
+}
+
+
+.auth-button:focus-visible {
+  outline: 2px solid var(--primary);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================
+   PANEL VISUAL DERECHO
+========================================= */
+
+.auth-visual {
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 0;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--dark-blue) 0%,
+      var(--dark-secondary) 45%,
+      var(--dark) 100%
+    );
+}
+
+
+/* =========================================
+   CUADRÍCULA
+========================================= */
+
+.auth-visual__grid {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    radial-gradient(
+      rgba(95, 188, 185, 0.18) 1px,
+      transparent 1px
+    );
+
+  background-size: 28px 28px;
+
+  opacity: 0.45;
+}
+
+
+/* =========================================
+   BRILLO SUPERIOR
+========================================= */
+
+.auth-visual__glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(65px);
+}
+
+
+/* #5fbcb9 */
+
+.auth-visual__glow--one {
+  width: 480px;
+
+  height: 480px;
+
+  top: -150px;
+
+  right: -120px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(95, 188, 185, 0.38) 0%,
+      rgba(43, 142, 158, 0.2) 40%,
+      transparent 72%
+    );
+
+  animation: floating-one 8s ease-in-out infinite;
+}
+
+
+/* #7abaa4 */
+
+.auth-visual__glow--two {
+  width: 420px;
+
+  height: 420px;
+
+  bottom: -160px;
+
+  left: -100px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(122, 186, 164, 0.3) 0%,
+      rgba(36, 124, 138, 0.18) 45%,
+      transparent 72%
+    );
+
+  animation: floating-two 10s ease-in-out infinite;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.auth-visual__content {
+  position: relative;
+
+  z-index: 1;
+
+  padding: 2rem;
+
+  max-width: 800px;
+}
+
+
+/* =========================================
+   SLOGAN
+========================================= */
+
+.auth-visual__slogan {
+  margin: 0;
+
+  color: var(--white);
+
+  font-family: 'Poppins', sans-serif;
+
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+  font-weight: 700;
+
+  line-height: 1.12;
+
+  letter-spacing: 0.02em;
+
+  text-align: center;
+
+  text-shadow:
+    0 8px 30px rgba(10, 33, 42, 0.5);
+
+  animation:
+    fade-in 0.7s ease both;
+}
+
+
+.auth-visual__slogan::first-line {
+  color: var(--primary);
+}
+
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes fade-in {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+@keyframes floating-one {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(-25px, 20px);
+  }
+
+}
+
+
+@keyframes floating-two {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(25px, -20px);
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 960px) {
+
+  .auth-shell {
+    grid-template-columns: 1fr;
+
+    grid-template-rows:
+      minmax(220px, 35vh)
+      1fr;
+  }
+
+
+  .auth-visual {
+    order: -1;
+
+    min-height: 220px;
+  }
+
+
+  .auth-visual__slogan {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+
+  .auth-panel {
+    padding: 2.5rem 2rem;
+
+    border-right: none;
+
+    border-top:
+      1px solid rgba(95, 188, 185, 0.12);
+
+    box-shadow:
+      0 -10px 40px rgba(10, 33, 42, 0.2);
+  }
+
+
+  .auth-panel__subtitle {
+    max-width: 100%;
+  }
+
+
+  .auth-button {
+    max-width: 420px;
+  }
+
+}
+
+
+/* =========================================
+   MÓVIL
+========================================= */
+
+@media (max-width: 600px) {
+
+  .auth-shell {
+    grid-template-rows:
+      minmax(180px, 30vh)
+      1fr;
+  }
+
+
+  .auth-visual {
+    min-height: 180px;
+  }
+
+
+  .auth-visual__content {
+    padding: 1.5rem;
+  }
+
+
+  .auth-visual__slogan {
+    font-size: 1.8rem;
+
+    line-height: 1.15;
+  }
+
+
+  .auth-panel {
+    padding: 2rem 1.5rem;
+  }
+
+
+  .auth-logo {
+    width: 64px;
+
+    height: 64px;
+
+    margin-bottom: 1.5rem;
+  }
+
+
+  .auth-logo img {
+    width: 46px;
+
+    height: 46px;
+  }
+
+
+  .auth-panel__title {
+    font-size: 1.45rem;
+  }
+
+
+  .auth-panel__subtitle {
+    font-size: 0.85rem;
+
+    line-height: 1.5;
+  }
+
+}
+
+
+/* =========================================
+   MÓVIL PEQUEÑO
+========================================= */
+
+@media (max-width: 380px) {
+
+  .auth-shell {
+    grid-template-rows:
+      minmax(150px, 27vh)
+      1fr;
+  }
+
+
+  .auth-visual {
+    min-height: 150px;
+  }
+
+
+  .auth-visual__slogan {
+    font-size: 1.5rem;
+  }
+
+
+  .auth-panel {
+    padding: 1.7rem 1.25rem;
+  }
+
+}
+
+
+/* =========================================
+   REDUCIR ANIMACIONES
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .auth-visual__slogan,
+  .auth-logo,
+  .auth-button,
+  .auth-visual__glow--one,
+  .auth-visual__glow--two {
+    animation: none;
+
+    transition: none;
+  }
+
+}
